@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         ArrayList<MainModel> list =new ArrayList<>();
-        list.add(new MainModel(0 , 56, 60, 89, 56, "Madhu SK"));
+        list.add(new MainModel(0, 56, 60, 89, 56, "Madhu SK"));
         list.add(new MainModel(0, 55, 60, 89, 56, "Madhu SK"));
         list.add(new MainModel(0, 54, 60, 89, 56, "Madhu SK"));
         list.add(new MainModel(0, 53, 60, 89, 56, "Madhu SK"));
@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
         list.add(new MainModel(0, 59, 60, 89, 56, "Madhu SK"));
         list.add(new MainModel(0, 58, 60, 89, 56, "Madhu SK"));
         list.add(new MainModel(0, 57, 60, 89, 56, "Madhu SK"));
-        list.add(new MainModel(0, 577, 60, 89, 56, "Madhu SK"));
-        list.add(new MainModel(0, 5779, 60, 89, 56, "Madhu SK"));
-        list.add(new MainModel(0, 589, 60, 89, 56, "Madhu SK"));
+        list.add(new MainModel(0, 84, 60, 89, 56, "Madhu SK"));
+        list.add(new MainModel(0, 59, 60, 89, 56, "Madhu SK"));
+        list.add(new MainModel(0, 89, 60, 89, 56, "Madhu SK"));
         MainAdapter adapter = new MainAdapter(list,this);
         binding.renteesRecView.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
