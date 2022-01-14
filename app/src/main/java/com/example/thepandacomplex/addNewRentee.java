@@ -16,5 +16,6 @@ public class addNewRentee extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = AddNewRenteeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
     }
 }

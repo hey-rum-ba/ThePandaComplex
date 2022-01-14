@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">ThePandaComplex</string>
     <string name="add_new_rentee">add new rentee</string>
+    <string name="meter_reading_1">Meter Reading 1</string>
+    <string name="meter_reading_2">Meter Reading 2</string>
+    <string name="button">Add This Rentee</string>
+    <string name="no_of_rentees">No of Rentees</string>
+    <string name="name">Name</string>
 </resources>
