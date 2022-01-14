@@ -7,18 +7,18 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rentees_recView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/rentee_list">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
     <Button
         android:id="@+id/addRentee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/add_new_rentee" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rentees_recView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/rentee_list">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

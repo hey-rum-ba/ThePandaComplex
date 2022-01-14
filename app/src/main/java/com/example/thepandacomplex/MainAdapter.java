@@ -32,7 +32,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewholder> {
 
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
-        final MainModel model = list.get(position );
+        final MainModel model = list.get(position);
+        holder.image.setImageResource(Integer.parseInt(model.getImage() +""));
         holder.roomNo.setText(model.getRoomNo()+"");
         holder.name.setText(model.getName());
         holder.electricity.setText(model.getElectricity()+"");
@@ -50,6 +51,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewholder> {
         TextView name,roomNo, lastRent,electricity,noOfRentee;
         public viewholder(@NonNull View itemView) {
             super(itemView);
+            image = itemView.findViewById(R.id.imageView);
             name = itemView.findViewById(R.id.name);
             roomNo = itemView.findViewById(R.id.roomNo);
             electricity = itemView.findViewById(R.id.electricity);

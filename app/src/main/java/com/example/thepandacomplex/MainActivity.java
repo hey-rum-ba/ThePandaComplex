@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.thepandacomplex.databinding.ActivityMainBinding;
@@ -32,18 +33,16 @@ public class MainActivity extends AppCompatActivity {
         list.add(new MainModel(R.drawable.image, 53, 60, 89, 56, "Madhu SK"));
         list.add(new MainModel(R.drawable.image, 52, 60, 89, 56, "Madhu SK"));
         list.add(new MainModel(R.drawable.image, 51, 60, 89, 56, "Madhu SK"));
-        list.add(new MainModel(R.drawable.image, 50, 60, 89, 56, "Madhu SK"));
-        list.add(new MainModel(R.drawable.image, 59, 60, 89, 56, "Madhu SK"));
-        list.add(new MainModel(R.drawable.image, 58, 60, 89, 56, "Madhu SK"));
-        list.add(new MainModel(R.drawable.image, 57, 60, 89, 56, "Madhu SK"));
-        list.add(new MainModel(R.drawable.image, 84, 60, 89, 56, "Madhu SK"));
-        list.add(new MainModel(R.drawable.image, 59, 60, 89, 56, "Madhu SK"));
-        list.add(new MainModel(R.drawable.image, 89, 60, 89, 56, "Madhu SK"));
+
         MainAdapter adapter = new MainAdapter(list, this);
         binding.renteesRecView.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         binding.renteesRecView.setLayoutManager(layoutManager);
 
+        binding.addRentee.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, addNewRentee.class)));
 
     }
+
+
+
 }
