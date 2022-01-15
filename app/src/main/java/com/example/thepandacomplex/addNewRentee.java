@@ -6,6 +6,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.thepandacomplex.databinding.AddNewRenteeBinding;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class addNewRentee extends AppCompatActivity {
     AddNewRenteeBinding binding;
@@ -16,6 +18,9 @@ public class addNewRentee extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = AddNewRenteeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        DatabaseReference instance = FirebaseDatabase.getInstance().getReference("Rentee List");
+
 
     }
 }

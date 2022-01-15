@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "910616317299",
+    "firebase_url": "https://the-panda-complex-default-rtdb.firebaseio.com",
+    "project_id": "the-panda-complex",
+    "storage_bucket": "the-panda-complex.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910616317299:android:5b85e4e62c6912d5f78906",
+        "android_client_info": {
+          "package_name": "com.example.thepandacomplex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910616317299-lm1p8fvlar718ut3n0t2hbn5rug4e82g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbdms0hd7ZFsEnAxNmzrBcoBq-oaPXC30"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910616317299-lm1p8fvlar718ut3n0t2hbn5rug4e82g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
