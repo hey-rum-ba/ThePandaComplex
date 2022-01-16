@@ -12,7 +12,6 @@ import com.google.firebase.database.FirebaseDatabase;
 public class addNewRentee extends AppCompatActivity {
     AddNewRenteeBinding binding;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
