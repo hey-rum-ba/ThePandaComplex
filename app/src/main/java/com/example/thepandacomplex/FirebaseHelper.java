@@ -1,10 +1,14 @@
 package com.example.thepandacomplex;
 
 public class FirebaseHelper {
-    int lastRent, electricity, noOfRentee ;
     String name;
+    int lastRent, electricity, noOfRentee ;
 
     public FirebaseHelper(String name, int lastDate, int noOfRentee, int electricity) {
+        this.lastRent = lastRent;
+        this.electricity = electricity;
+        this.noOfRentee = noOfRentee;
+        this.name = name;
     }
 
     public int getLastRent() {

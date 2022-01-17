@@ -3,6 +3,7 @@ package com.example.thepandacomplex;
 import static android.util.Log.*;
 import static androidx.constraintlayout.widget.ConstraintLayoutStates.TAG;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,7 +34,7 @@ public class addNewRentee extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Rentee List 3");
+        databaseReference = firebaseDatabase.getReference("Rentee List");
 
         binding.submit.setOnClickListener(view -> {
             String name = binding.renteeNameInNewRentee.getText().toString();
@@ -43,6 +44,7 @@ public class addNewRentee extends AppCompatActivity {
                     Integer.parseInt(binding.meterReading1InNewRentee.getText().toString());
             d(TAG, "name :"+ name);
             addDataToFireBase(name,lastDate,noOfRentee,electricity);
+            startActivity(new Intent(addNewRentee.this, MainActivity.class));
         });
 
     }
@@ -52,19 +54,12 @@ public class addNewRentee extends AppCompatActivity {
         d(TAG, "name here is1 :"+lastDate);
         d(TAG, "name here is2 :"+noOfRentee);
         d(TAG, "name here is3 :"+electricity);
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                FirebaseHelper helper= new FirebaseHelper(name,lastDate,noOfRentee,electricity);
-                databaseReference.setValue(helper);
-                Toast.makeText(addNewRentee.this, "Data added success", Toast.LENGTH_SHORT).show();
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(addNewRentee.this, "Failed", Toast.LENGTH_SHORT).show();
-            }
-        });
+        FirebaseHelper helper= new FirebaseHelper(name,lastDate,noOfRentee,electricity);
+        String uploadID = databaseReference.push().getKey();
+        databaseReference.child(uploadID).setValue(helper).addOnSuccessListener(v->
+                Toast.makeText(addNewRentee.this, "Data added success", Toast.LENGTH_SHORT).show());
+
     }
 }
 
