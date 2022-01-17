@@ -11,6 +11,9 @@ public class FirebaseHelper {
         this.name = name;
     }
 
+    public FirebaseHelper() {
+    }
+
     public int getLastRent() {
         return lastRent;
     }

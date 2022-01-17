@@ -5,24 +5,16 @@ import static androidx.constraintlayout.widget.ConstraintLayoutStates.TAG;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.thepandacomplex.databinding.AddNewRenteeBinding;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.nio.file.ClosedFileSystemException;
-
-public class addNewRentee extends AppCompatActivity {
+public class AddNewRentee extends AppCompatActivity {
     AddNewRenteeBinding binding;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -44,7 +36,7 @@ public class addNewRentee extends AppCompatActivity {
                     Integer.parseInt(binding.meterReading1InNewRentee.getText().toString());
             d(TAG, "name :"+ name);
             addDataToFireBase(name,lastDate,noOfRentee,electricity);
-            startActivity(new Intent(addNewRentee.this, MainActivity.class));
+            startActivity(new Intent(AddNewRentee.this, MainActivity.class));
         });
 
     }
@@ -58,7 +50,7 @@ public class addNewRentee extends AppCompatActivity {
         FirebaseHelper helper= new FirebaseHelper(name,lastDate,noOfRentee,electricity);
         String uploadID = databaseReference.push().getKey();
         databaseReference.child(uploadID).setValue(helper).addOnSuccessListener(v->
-                Toast.makeText(addNewRentee.this, "Data added success", Toast.LENGTH_SHORT).show());
+                Toast.makeText(AddNewRentee.this, "Data added success", Toast.LENGTH_SHORT).show());
 
     }
 }

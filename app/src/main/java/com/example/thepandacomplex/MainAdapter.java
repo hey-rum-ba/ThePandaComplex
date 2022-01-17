@@ -11,17 +11,23 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.view.menu.MenuView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewholder> {
 
-    ArrayList<MainModel> list;
+    ArrayList<FirebaseHelper> list;
     Context context;
 
-    public MainAdapter(ArrayList<MainModel> list, Context context){
+    public MainAdapter(ArrayList<FirebaseHelper> list, Context context){
         this.list =list;
         this.context =context;
     }
+
+
+
 
     @NonNull
     @Override
@@ -32,9 +38,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewholder> {
 
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
-        final MainModel model = list.get(position);
-        holder.image.setImageResource(Integer.parseInt(model.getImage() +""));
-        holder.roomNo.setText(model.getRoomNo()+"");
+        final FirebaseHelper model = list.get(position);
+//        holder.image.setImageResource(Integer.parseInt(model.getImage() +""));
+        holder.roomNo.setText(position+1+"");
         holder.name.setText(model.getName());
         holder.electricity.setText(model.getElectricity()+"");
         holder.lastRent.setText(model.getLastRent()+"");
