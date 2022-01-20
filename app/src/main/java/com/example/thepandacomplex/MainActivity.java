@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
         binding.addRentee.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, AddNewRentee.class)));
 
+
+
     }
 
 }
