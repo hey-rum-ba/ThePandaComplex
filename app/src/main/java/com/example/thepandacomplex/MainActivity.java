@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.example.thepandacomplex.databinding.ActivityMainBinding;
@@ -50,12 +51,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
         binding.addRentee.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, AddNewRentee.class)));
 
     }
-
-
 
 }

@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ThePandaComplex">
         <activity android:name=".AddNewRentee"/>
+        <activity android:name=".RenteeDetails"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
