@@ -3,6 +3,7 @@ package com.example.thepandacomplex;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -52,9 +53,26 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.addRentee.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, AddNewRentee.class)));
-
-
-
+        public interface OnListItemClick {
+            void onClick(View view, int position);
+        }
+        OnListItemClick onListItemClick = new OnListItemClick() {
+            @Override
+            public void onClick(View view, int position) {
+                // you will get click here
+                // do your code here
+            }
+        };
+        youradaptor.setClickListener(onListItemClick);
+        public void setClickListener(OnListItemClick context) {
+            this.onListItemClick = context;
+        }
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onListItemClick.onClick(view, getAdapterPosition()); // passing click to interface
+            }
+        });
     }
 
 }
